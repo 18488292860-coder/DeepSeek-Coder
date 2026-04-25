@@ -126,4 +126,6 @@ with gr.Blocks(css="style.css") as demo:
     chat_interface.render()
 
 if __name__ == "__main__":
-    demo.queue().launch(share=True)
+    # Vercel Analytics - inject the analytics script into the page head
+    analytics_script = '<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>'
+    demo.queue().launch(share=True, head=analytics_script)
